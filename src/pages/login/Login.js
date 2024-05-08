@@ -1,33 +1,33 @@
 import { useEffect, useState } from "react";
 import styles from "./Login.module.css";
-import { useAuthentication } from "../../components/hooks/useAuthentication";
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Login = () => {
-   const [error, setError] = useState("");
-   const [email, setEmail] = useState("");
-   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-   const { login, error: AuthError, loading } = useAuthentication();
+  const { login, error: AuthError, loading } = useAuthentication();
 
-   const handleSubmit = async (e) => {
-     e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-     setError("");
+    setError("");
 
-     const user = {
-       email,
-       password,
-     };
-     
-     const res = await login(user);
-     console.log(res);
-   };
+    const user = {
+      email,
+      password,
+    };
 
-   useEffect(() => {
-     if (AuthError) {
-       setError(AuthError);
-     }
-   }, [AuthError]);
+    const res = await login(user);
+    console.log(res);
+  };
+
+  useEffect(() => {
+    if (AuthError) {
+      setError(AuthError);
+    }
+  }, [AuthError]);
   return (
     <div className={styles.Login}>
       <h1>Entrar</h1>

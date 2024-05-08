@@ -1,5 +1,3 @@
-import { db } from "../../firebase/config";
-
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -74,7 +72,6 @@ export const useAuthentication = () => {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       setLoading(false);
     } catch (error) {
-
       let systemErrorMessage;
       if (error.message.includes("user-not-found")) {
         systemErrorMessage = "Usuário não encontrado.";

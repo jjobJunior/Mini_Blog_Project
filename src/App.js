@@ -16,8 +16,8 @@ import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import { AuthProvider } from "./components/context/AuthContext";
-import { useAuthentication } from "./components/hooks/useAuthentication";
+import { AuthProvider } from "./context/AuthContext";
+import { useAuthentication } from "./hooks/useAuthentication";
 import CreatePost from "./pages/createPost/CreatePost";
 import Dashboard from "./pages/dashboard/Dashboard";
 
