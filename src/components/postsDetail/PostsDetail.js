@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const PostsDetail = ({ post }) => {
   return (
-    <div>
+    <div className={styles.post_detail}>
       <img src={post.image} alt={post.title} />
       <h2>{post.title}</h2>
-      <p>{post.createBy}</p>
-      <div>
+      <p className={styles.createdby}>{post.createdBy}</p>
+      <div className={styles.tags}>
         {post.tags.map((tag) => (
           <p key={tag}>
             <span>#</span>
@@ -15,7 +15,7 @@ const PostsDetail = ({ post }) => {
           </p>
         ))}
       </div>
-      <Link to={`/posts${post.id}`} className="btn btn-outline">
+      <Link to={`/posts/${post.id}`} className="btn btn-outline">
         Ler
       </Link>
     </div>

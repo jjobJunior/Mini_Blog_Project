@@ -20,6 +20,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { useAuthentication } from "./hooks/useAuthentication";
 import CreatePost from "./pages/createPost/CreatePost";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Search from "./pages/search/Search";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -45,6 +46,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate to="/" />}
