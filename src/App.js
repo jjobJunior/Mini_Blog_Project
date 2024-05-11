@@ -21,6 +21,7 @@ import { useAuthentication } from "./hooks/useAuthentication";
 import CreatePost from "./pages/createPost/CreatePost";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Search from "./pages/search/Search";
+import Post from "./pages/post/Post";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -47,6 +48,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/search" element={<Search />} />
+              <Route path="/posts/:id" element={<Post />} />
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate to="/" />}
