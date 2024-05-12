@@ -23,7 +23,7 @@ const Home = () => {
       <form onSubmit={handleSubmit} className={styles.search_form}>
         <input
           type="text"
-          placeholder="Ou busque por tags..."
+          placeholder="Buscar por tags..."
           onChange={(e) => setQuery(e.target.value)}
         />
         <button className="btn btn-dark">Pesquisar</button>
